@@ -1,4 +1,14 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import HomePage from "./pages/home"
 
-const App = () => <main className="bg-dark-blue text-white w-full h-screen">Hello World</main>
+const queryClient = new QueryClient()
+
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <HomePage />
+    </QueryClientProvider>
+  )
+}
 
 export default App
